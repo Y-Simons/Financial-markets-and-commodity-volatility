@@ -5,7 +5,11 @@
 Final thesis — EDHEC Business School, International BBA (4th year, 2020/2021
 programme). Thesis director: Ms Stepanyan. Final version: July 2022.
 
-📄 **[Read the thesis (PDF)](thesis/Simons_EDHEC_thesis_oil-volatility-wavelet-coherence.pdf)**
+📄 **[Read the thesis (PDF)](thesis/Simons_EDHEC_thesis_oil-volatility-wavelet-coherence.pdf)** —
+original version, unchanged.
+
+📘 **[Revised edition, 2026 (PDF)](revised-edition-2026/Simons_EDHEC_thesis_revised-edition-2026.pdf)** —
+same question and data, corrected text and re-run analysis (see below).
 
 ## Research question
 
@@ -55,13 +59,34 @@ Monthly series, January 2000 – March 2022 (267 observations):
   work suggested: directional analysis, macroeconomic controls (inflation), and
   a Brent benchmark.
 
+## Revised edition (2026)
+
+[`revised-edition-2026/`](revised-edition-2026/) re-runs the analysis on the
+identical data in Python (`revised_analysis.py`, fully reproducible) with log
+changes, a full unit-root battery, robust standard errors, two-way Granger tests
+with lag selection, and wavelet coherence with Monte Carlo significance and phase
+(lead–lag) analysis. It also corrects errors of the 2022 text (an erratum is
+included). Main revised findings:
+
+- WTI is non-stationary in levels; all models use monthly log changes.
+- Economic policy uncertainty is negatively associated with oil price changes
+  (elasticity −0.074, HAC p = 0.026), with a further lagged effect; geopolitical
+  risk has no significant average effect.
+- Granger evidence is weak: EPU → WTI only with one lag (p = 0.035); the 2022
+  tests described as significant were not.
+- WTI–EPU coherence is concentrated in 2001–2004, 2007–2010 and 2018–2021 at
+  8–16-month horizons, mostly in anti-phase; uncertainty leads oil in the first
+  two episodes, oil leads during the pandemic. WTI–GPR coherence is confined to
+  2000–2004.
+
 ## Repository
 
 ```
-thesis/      final thesis (PDF)
-code/        final R script used for the thesis
-data/        input data (levels workbook, wavelet pairs, CSV with returns)
-paper-2026/  2026 follow-up paper (draft)
+thesis/                final thesis (PDF, original)
+code/                  final R script used for the thesis
+data/                  input data (levels workbook, wavelet pairs, CSV with returns)
+revised-edition-2026/  revised edition (PDF), Python analysis, LaTeX source, figures, tables
+paper-2026/            2026 follow-up paper (draft)
 ```
 
 To run the script, see the reproduction notes at the top of
